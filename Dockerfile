@@ -11,5 +11,5 @@ COPY . /app
 RUN yarn install
 
 # Define the entry point for the container
-EXPOSE 8080
+EXPOSE 8282
 CMD ["npm", "start"]
