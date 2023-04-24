@@ -88,3 +88,51 @@ p:hover {
 }
 
 
+@media (max-width: 900px){
+
+    .footer-inner-bottom .footer-inner-left svg {
+        padding: 0;
+    }
+    
+    .footer-inner-bottom .footer-inner-right {
+        gap: 15px;
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .footer-inner-top {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-inner-top .footer-inner-left {
+        width: 100%;
+    }
+
+    .footer-inner-top .footer-inner-right {
+        width: 100%;
+    }
+
+    .footer-inner-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+}
+
+@media (max-width: 540px) {
+
+    .footer-inner {
+        width: 90%;
+    }
+
+    .footer-inner-bottom .footer-inner-right {
+        justify-content: center;
+    }
+
+}

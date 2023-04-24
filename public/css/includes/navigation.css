@@ -51,3 +51,21 @@
     font-weight: 500;
     cursor: pointer;
 }
+
+
+@media (max-width: 540px) {
+
+    .header-container-inner {
+        width: 95%;
+    }
+
+    .header-container-inner .options-section .get-started {
+        padding: 7px 15px;
+    }
+    
+    .header-container-inner .options-section .log-in {
+        padding: 7px 15px;
+
+    }
+
+}
