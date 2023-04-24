@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+hr {
+    margin: 30px 0;
+}
+
+p, svg {
+    cursor: pointer;
+}
+
+p:hover {
+    text-decoration: underline;
+}
+
+.footer-main {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    padding: 50px 0 30px;
+}
+
+.footer-inner {
+    width: 80%;
+}
+
+.footer-inner-top {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.footer-inner-top .footer-inner-left {
+    width: 40%;
+}
+
+.footer-inner-top .footer-inner-left h1 {
+    font-family: 'Lobster';
+    font-size: 45px;
+    padding: 20px 0;
+    background: linear-gradient(90deg, hsla(324, 91%, 46%, 1) 0%, hsla(18, 100%, 49%, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-inner-top .footer-inner-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-inner-top .footer-inner-right h6 {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.footer-inner-top .footer-inner-right .about-contact {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+.footer-inner-top .footer-inner-right .about-contact p {
+    font-weight: 600;
+}
+
+.footer-inner-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-inner-bottom .footer-inner-left svg {
+    padding: 0 5px;
+}
+
+.footer-inner-bottom .footer-inner-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-inner-bottom .footer-inner-right p {
+    font-size: 14px;
+    margin: 0;
+}
