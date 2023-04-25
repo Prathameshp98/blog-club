@@ -28,7 +28,7 @@ app.use('/auth', authRoutes)
 app.use('/', blogRoutes)
 
 mongoose.connect(
-    `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@${process.env.CLUSTER}/${process.env.DATABASE}?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.MONGO_DATABASE_USER}:${process.env.MONGO_DATABASE_PASSWORD}@${process.env.MONGO_DATABASE_CLUSTER}/${process.env.MONGO_DATABASE_DATABASE}?retryWrites=true&w=majority`
     )
     .then(result => {
         app.listen(8282, () => {
