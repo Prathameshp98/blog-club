@@ -35,7 +35,7 @@
     background: -webkit-linear-gradient(90deg, hsla(324, 91%, 46%, 1) 0%, hsla(18, 100%, 49%, 1) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E20B8C", endColorstr="#F84B00", GradientType=1 );
     border: none;
-    padding: 10px 30px;
+    padding: 12px 30px;
     color: white;
     border-radius: 5px;
     font-weight: 500;
@@ -60,7 +60,7 @@
     }
 
     .header-container-inner .options-section .get-started {
-        padding: 7px 15px;
+        padding: 9px 15px;
     }
     
     .header-container-inner .options-section .log-in {

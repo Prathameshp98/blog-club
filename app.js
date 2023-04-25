@@ -3,6 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
+const authRoutes = require('./routes/auth')
 const blogRoutes = require('./routes/blogs')
 
 const app = express()
@@ -20,8 +21,18 @@ app.use((req, res, next) => {
     next()
 })
 
+app.use('/auth', authRoutes)
 app.use('/', blogRoutes)
 
-app.listen(8282, () => {
-    console.log("App started on port 8282")
-}); 
+mongoose.connect(
+    'mongodb+srv://admin_prathamesh:fDBN9Jc3d45pPhUt@cluster0.hm590.mongodb.net/BlogClubDB?retryWrites=true&w=majority'
+    )
+    .then(result => {
+        app.listen(8282, () => {
+            console.log("App started on port 8282")
+        });   
+    })
+    .catch(err => console.log(err))
+
+
+
