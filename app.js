@@ -2,11 +2,14 @@ const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+
 
 const authRoutes = require('./routes/auth')
 const blogRoutes = require('./routes/blogs')
 
 const app = express()
+dotenv.config()
 
 app.set('view engine','ejs')
 app.set('views','views')
@@ -25,7 +28,7 @@ app.use('/auth', authRoutes)
 app.use('/', blogRoutes)
 
 mongoose.connect(
-    'mongodb+srv://admin_prathamesh:fDBN9Jc3d45pPhUt@cluster0.hm590.mongodb.net/BlogClubDB?retryWrites=true&w=majority'
+    `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@${process.env.CLUSTER}/${process.env.DATABASE}?retryWrites=true&w=majority`
     )
     .then(result => {
         app.listen(8282, () => {
