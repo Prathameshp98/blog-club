@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+a {
+    text-decoration: none;
+}
+
+.login-main {
+    background-color: aliceblue;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.login-main .arrow {
+    position: relative;
+    z-index: 2;
+    bottom: -60px;
+    margin: -30px 100px 0px;;
+    background-color: #fff;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 100px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.login-main .arrow img {
+    width: 50px;
+}
+
+.login-card {
+    transform: translateY(20%);
+    background-color: #fff;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 30px 30px;
+    border-radius: 15px;
+}
+
+.login-card-inner {
+    text-align: center;
+}
+
+.login-card-inner .upper-text {
+    padding: 0px 0px 20px;
+}
+
+.login-card-inner .upper-text h2 {
+    font-family: 'Pacifico';
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 32px;
+    background: linear-gradient(90deg, hsla(324, 91%, 46%, 1) 0%, hsla(18, 100%, 49%, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    margin-bottom: 0px;
+}
+
+.login-card-inner .upper-text p {
+    font-size: 16px;
+    color: rgb(155, 155, 155);
+}
+
+.login-card-inner .login-form {
+    padding: 20px 0px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-card-inner .login-form .form-control {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.login-card-inner .login-form .form-control label {
+    color: #2F2FA2;
+    font-weight: 500;
+}
+
+.login-card-inner .login-form .form-control input {
+    border: none;
+    border-bottom: 2px solid rgb(193, 193, 193);
+}
+
+.login-card-inner .login-form .form-control input:hover,
+.login-card-inner .login-form .form-control input:focus  {
+    outline: 0;
+}
+
+.login-card-inner .login-form .form-control p {
+    font-size: 13px;
+    color: rgb(193, 193, 193);
+    cursor: pointer;
+}
+
+.login-card-inner .lower-text {
+    padding: 20px 0px 0px;
+}
+
+.login-card-inner .lower-text h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2F2FA2;
+    cursor: pointer;
+}
+
+.login-card-inner .lower-text p {
+    font-size: 16px;
+    color: rgb(155, 155, 155);
+}

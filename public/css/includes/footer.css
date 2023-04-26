@@ -4,11 +4,11 @@ hr {
     margin: 30px 0;
 }
 
-p, svg {
+.footer-para, svg {
     cursor: pointer;
 }
 
-p:hover {
+.footer-para:hover {
     text-decoration: underline;
 }
 
