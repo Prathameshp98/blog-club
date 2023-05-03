@@ -140,3 +140,11 @@ a {
     font-size: 16px;
     color: rgb(155, 155, 155);
 }
+
+@media(max-width: 540px) {
+    .background {
+        overflow: hidden;
+        overflow-y: auto;
+        height: 110vh;
+    }
+}
