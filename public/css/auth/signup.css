@@ -14,15 +14,17 @@ a {
 }
 
 .signup-main .arrow {
+    cursor: pointer;
     position: relative;
     z-index: 2;
-    bottom: -60px;
+    bottom: -125px;
     margin: -30px 100px 0px;
     background-color: #fff;
     width: fit-content;
     padding: 10px;
     border-radius: 100px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 0;
 }
 
 .signup-main .arrow img {
@@ -34,7 +36,7 @@ a {
     background-color: #fff;
     width: fit-content;
     height: fit-content;
-    padding: 20px 30px 30px;
+    padding: 20px 30px 55px;
     border-radius: 15px;
 }
 
@@ -64,8 +66,12 @@ a {
 }
 
 .signup-card-inner .signup-form {
-    padding: 20px 0px;
+    padding: 20px 0px 0px;
     text-align: left;
+    height: 260px;
+}
+
+.signup-card-inner .signup-form .signup-form-inner {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -99,7 +105,7 @@ a {
 }
 
 .signup-card-inner .lower-text {
-    padding: 20px 0px 0px;
+    padding: 0;
 }
 
 .signup-card-inner .lower-text h3 {

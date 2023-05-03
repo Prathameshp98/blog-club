@@ -12,32 +12,36 @@
                         <h2>signup</h2>
                         <p>SignUp for a new account Securely</p>
                     </div>
-                    <form method="POST" action="" class="signup-form">
-                        <div class="form-control">
-                            <label for="name">Full Name</label>
-                            <input type="text" name="name" id="name">
+                    <form method="POST" action="/auth/login" class="signup-form">
+                        <div class="signup-form-inner">
+                            <div class="form-control">
+                                <label for="name">Full Name</label>
+                                <input type="text" name="name" id="name">
+                            </div>
+                            <div class="form-control">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email">
+                            </div>
+                            <div class="form-control">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" autocomplete>
+                            </div>
+                            <div class="form-control">
+                                <label for="confirm_password">Confirm Password</label>
+                                <input type="password" name="confirm_password" id="confirm_password" autocomplete>
+                            </div>
                         </div>
-                        <div class="form-control">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email">
-                        </div>
-                        <div class="form-control">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="password">
-                        </div>
-                        <div class="form-control">
-                            <label for="confirm-password">Confirm Password</label>
-                            <input type="password" name="confirm-password" id="confirm-password">
-                        </div>
+                        
+                        <button class="arrow" type="submit">
+                            <img src="/images/right-arrow.webp" alt="arrow">
+                        </button>
                     </form>
                     <div class="lower-text">
                         <p>Already registered?</p>
-                        <a href="/auth/login"><h3>Login</h3></a>
+                        <h3>Login</h3>
                     </div>
                 </div>
-                <div class="arrow">
-                    <img src="/images/right-arrow.webp" alt="arrow">
-                </div>
+                
             </div>
         </div>
         <script src="" async defer></script>
