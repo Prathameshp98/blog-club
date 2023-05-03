@@ -5,8 +5,18 @@
             <img src="/images/letter-b.webp" alt="" />
         </div>
         <div class="options-section">
-            <a href="/auth/signup"><button class="get-started">Get Started</button></a>
-            <a href="/auth/login"><button class="log-in">Log In</button></a>
+            <% if (isAuthenticated){ %>
+                <a href=""><button class="get-started">New Blog</button></a>
+                <form action="/auth/logout" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button class="log-in">Log Out</button>
+                </form>
+                
+            <% } else { %>
+                <a href="/auth/signup"><button class="get-started">Get Started</button></a>
+                <a href="/auth/login"><button class="log-in">Log In</button></a>
+            <% } %>
+            
         </div>
     </div>
 </div>

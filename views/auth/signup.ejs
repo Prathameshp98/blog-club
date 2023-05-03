@@ -5,45 +5,56 @@
     <body>
         <%- include('../includes/nav-header.ejs') %>
         
-        <div class="signup-main">
-            <div class="signup-card">
-                <div class="signup-card-inner">
-                    <div class="upper-text">
-                        <h2>signup</h2>
-                        <p>SignUp for a new account Securely</p>
-                    </div>
-                    <form method="POST" action="/auth/login" class="signup-form">
-                        <div class="signup-form-inner">
-                            <div class="form-control">
-                                <label for="name">Full Name</label>
-                                <input type="text" name="name" id="name">
-                            </div>
-                            <div class="form-control">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" id="email">
-                            </div>
-                            <div class="form-control">
-                                <label for="password">Password</label>
-                                <input type="password" name="password" id="password" autocomplete>
-                            </div>
-                            <div class="form-control">
-                                <label for="confirm_password">Confirm Password</label>
-                                <input type="password" name="confirm_password" id="confirm_password" autocomplete>
-                            </div>
+        <div class="background">
+            <% if(errorMessage){ %>
+                <div class="user-message user-message--error"><%= errorMessage %></div>
+            <% } %>
+            <div class="signup-main">
+                <div class="signup-card">
+                    <div class="signup-card-inner">
+                        <div class="upper-text">
+                            <h2>signup</h2>
+                            <p>SignUp for a new account Securely</p>
                         </div>
-                        
-                        <button class="arrow" type="submit">
-                            <img src="/images/right-arrow.webp" alt="arrow">
-                        </button>
-                    </form>
-                    <div class="lower-text">
-                        <p>Already registered?</p>
-                        <h3>Login</h3>
+                        <form method="POST" action="/auth/signup" class="signup-form">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <div class="signup-form-inner">
+                                <div class="form-control">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" name="name" id="name">
+                                    <p id="name-valid"></p>
+                                </div>
+                                <div class="form-control">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email">
+                                    <p id="email-valid"></p>
+                                </div>
+                                <div class="form-control">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" id="password" autocomplete>
+                                    <p id="password-valid"></p>
+                                </div>
+                                <div class="form-control">
+                                    <label for="confirm_password">Confirm Password</label>
+                                    <input type="password" name="confirm_password" id="confirm_password" autocomplete>
+                                    <p id="confirm-password-valid"></p>
+                                </div>
+                            </div>
+                            
+                            <button class="arrow" id="submit-button" type="submit" disabled>
+                                <img id="arrow-img" src="/images/close.webp" alt="arrow">
+                            </button>
+                        </form>
+                        <div class="lower-text">
+                            <p>Already registered?</p>
+                            <a href="/auth/login"><h3>Login</h3></a>
+                        </div>
                     </div>
+                    
                 </div>
-                
             </div>
         </div>
-        <script src="" async defer></script>
+        
+        <script src="/js/signup-validation.js" async defer></script>
     </body>
 </html>

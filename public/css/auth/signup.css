@@ -5,19 +5,39 @@ a {
     text-decoration: none;
 }
 
-.signup-main {
+.background {
     background-color: aliceblue;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.user-message {
+    margin: 20px auto 0px;
+    width: 300px;
+    border: 1px solid #4771fa;
+    padding: 0.5rem;
+    border-radius: 3px;
+    background: #b9c9ff;
+    text-align: center;
+}
+
+.user-message--error {
+    border-color: red;
+    background-color: rgb(255, 176, 176);
+    color: red;
+}
+
+.signup-main {
     display: flex;
     justify-content: center;
 }
 
 .signup-main .arrow {
-    cursor: pointer;
+    cursor: not-allowed;
     position: relative;
     z-index: 2;
-    bottom: -125px;
+    bottom: -120px;
     margin: -30px 100px 0px;
     background-color: #fff;
     width: fit-content;
@@ -36,7 +56,7 @@ a {
     background-color: #fff;
     width: fit-content;
     height: fit-content;
-    padding: 20px 30px 55px;
+    padding: 0px 30px 55px;
     border-radius: 15px;
 }
 
@@ -45,7 +65,7 @@ a {
 }
 
 .signup-card-inner .upper-text {
-    padding: 0px 0px 20px;
+    padding: 0;
 }
 
 .signup-card-inner .upper-text h2 {
@@ -81,6 +101,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    height: 43px;
 }
 
 .signup-card-inner .signup-form .form-control label {
@@ -99,9 +120,9 @@ a {
 }
 
 .signup-card-inner .signup-form .form-control p {
-    font-size: 13px;
-    color: rgb(193, 193, 193);
-    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    color: red;
 }
 
 .signup-card-inner .lower-text {
