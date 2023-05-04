@@ -5,13 +5,39 @@
             <img src="/images/letter-b.webp" alt="" />
         </div>
         <div class="options-section">
-            <% if (isAuthenticated){ %>
-                <a href=""><button class="get-started">New Blog</button></a>
+            <% if (isAuthenticated){ %> 
+                <!-- <a href=""><button class="get-started">New Blog</button></a>
                 <form action="/auth/logout" method="POST">
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <button class="log-in">Log Out</button>
-                </form>
-                
+                </form> -->
+                <div id="open" class="profile-main">
+                    <img src="/images/menu.webp" alt="" />
+                </div>
+                <div id="profile" class="profile-menu hide">
+                    <div class="profile-name">
+                        <div class="profile-name-inner">
+                            <p>Welcome,</p>
+                            <h6><%= userName %></h6>
+                        </div>
+                        <img id="close" src="/images/close-small.webp" alt="" />
+                    </div>
+                    <div class="profile-items">
+                        <a>
+                            <div class="profile-items-inner">
+                                <p>Dashboard</p>
+                                <img src="/images/dashboard.webp" alt="" />
+                            </div>
+                        </a>
+                        <a href="/auth/logout">
+                            <div class="profile-items-inner">
+                                <p>LogOut</p>
+                                <img src="/images/logout.webp" alt="" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
             <% } else { %>
                 <a href="/auth/signup"><button class="get-started">Get Started</button></a>
                 <a href="/auth/login"><button class="log-in">Log In</button></a>

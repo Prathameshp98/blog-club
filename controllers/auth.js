@@ -9,9 +9,14 @@ exports.getSignUp = (req, res, next) => {
         message = null
     }
 
-    res.render('auth/signup', {
-        errorMessage: message
-    })
+    if(!res.locals.isAuthenticated){
+        res.render('auth/signup', {
+            errorMessage: message
+        })
+    } else {
+        res.redirect('/')
+    }
+    
 
 }
 
@@ -48,7 +53,7 @@ exports.postSignUp = (req, res, next) => {
                 })
         })
         .catch(err => { console.log(err) })
-        
+
 
 }
 
@@ -60,9 +65,13 @@ exports.getLogIn = (req, res, next) => {
         message = null
     }
 
-    res.render('auth/login', {
-        errorMessage: message
-    })
+    if(!res.locals.isAuthenticated){
+        res.render('auth/login', {
+            errorMessage: message
+        })
+    } else {
+        res.redirect('/')
+    }
 
 }
 
