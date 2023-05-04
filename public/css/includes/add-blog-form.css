@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.blog-form-main {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+
+.blog-form-inner {
+    width: 40%;
+    margin: 7em 0;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.blog-form-inner h2 {
+    font-family: 'Pacifico';
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 32px;
+    background: linear-gradient(90deg, hsla(324, 91%, 46%, 1) 0%, hsla(18, 100%, 49%, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.blog-form-inner .form-control {
+    display: flex;
+    flex-direction: column; 
+    width: 85%;
+}
+
+.blog-form-inner .form-control label {
+    color: #9b9b9b;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.blog-form-inner .form-control .required::after {
+    content: "*";
+    color: red;
+}
+
+.blog-form-inner .form-control p {
+    font-size: 13px;
+    color: red;
+    text-align: center;
+}
+
+.blog-form-inner .form-control input {
+    height: 30px;;
+}
+
+
+.blog-form-inner .form-control textarea {
+    height: 150px;
+    resize: none;
+}
+
+.blog-form-inner .form-control input, textarea {
+    border: 2px solid #9b9b9b;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.blog-form-inner .form-control input, textarea:hover,
+.blog-form-inner .form-control input, textarea:focus  {
+    outline: 0;
+}
+
+.blog-form-inner button {
+    padding: 8px 50px;
+    color: hsla(324, 91%, 46%, 1);
+    border: 2px solid hsla(324, 91%, 46%, 1);
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: not-allowed;
+}

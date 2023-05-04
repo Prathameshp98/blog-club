@@ -7,4 +7,7 @@ const router = express.Router()
 
 router.get('/', isAuth,  blogController.getHome)
 
+// /add-blog
+router.get('/add-blog', isAuth,  blogController.getAddBlog)
+
 module.exports = router

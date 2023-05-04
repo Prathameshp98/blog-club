@@ -1,0 +1,22 @@
+
+<div class="blog-form-main">
+    <form class="blog-form-inner" action="/add-blog" method="POST">
+        <h2>New Blog</h2>
+        <div class="form-control">
+            <label class="required" for="title">Title</label>
+            <input type="text" name="title" id="title">
+            <p id="title-valid"></p>
+        </div>
+        <div class="form-control">
+            <label for="imageurl">Image URL</label>
+            <input type="text" name="imageurl" id="imageurl">
+            <p id="imageurl-valid"></p>
+        </div>
+        <div class="form-control">
+            <label  class="required" for="content">Content</label>
+            <textarea name="content" id="content"></textarea>
+            <p id="content-valid"></p>
+        </div>
+        <button type="submit" id="submit-button" disabled>Publish</button>
+    </form>
+</div>
