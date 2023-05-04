@@ -85,3 +85,15 @@
     font-weight: 500;
     cursor: not-allowed;
 }
+
+@media (max-width: 540px) {
+
+    .blog-form-inner {
+        width: 90%;
+        margin: 3em 0 5em;
+    }
+
+    .blog-form-inner .form-control {
+        width: 90%;
+    }
+}
