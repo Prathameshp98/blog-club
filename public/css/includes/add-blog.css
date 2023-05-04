@@ -1,0 +1,68 @@
+
+.write-blog-main {
+    background-color: #fff;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.write-blog-inner {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.write-blog-inner .write-blog-inner-left .write-blog-header {
+    padding: 20px 0 0;
+}
+
+.write-blog-inner .write-blog-inner-left .write-blog-header h2 {
+    margin: 0;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.write-blog-inner .write-blog-inner-left .write-blog-para {
+    padding: 20px 0;
+}
+
+.write-blog-inner .write-blog-inner-left .write-blog-para p {
+    margin: 0;
+    color: #9b9b9b;
+}
+
+.write-blog-inner .write-blog-inner-left .write-blog-para p span {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+
+.write-blog-inner .write-blog-inner-left button {
+    padding: 10px 40px;
+    color: hsla(324, 91%, 46%, 1);
+    border: 2px solid hsla(324, 91%, 46%, 1);
+    background-color: #fff;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.write-blog-inner .write-blog-inner-right > img {
+    height: 300px;
+    width: 300px;
+}
+
+
+@media (max-width: 540px) {
+
+    .write-blog-inner {
+        padding: 10px 50px 50px;
+    }
+
+    .write-blog-inner .write-blog-inner-right > img {
+        display: none;
+    }
+}

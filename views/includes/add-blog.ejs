@@ -1,0 +1,25 @@
+
+<div class="write-blog-main">
+    <div class="write-blog-inner">
+        <div class="write-blog-inner-left">
+            <div class="write-blog-header">
+                <h2>Explore new</h2>
+                <h2>perspective</h2>
+            </div>
+            <div class="write-blog-para">
+                <p>Read and share ideas from independent voices, world-class</p>
+                <p>publications, and experts from around the globe. Everyone's</p>
+                <p>welcome. <span>Learn More</span>.</p>
+            </div>
+            <% if (isAuthenticated){ %> 
+                <a href="/add-blog"><button class="log-in">Write a blog</button></a>
+            <% } else { %>
+                <a href="/auth/signup"><button class="log-in">Get Started</button></a>
+            <% } %>
+            
+        </div>
+        <div class="write-blog-inner-right">
+            <img src="/images/global-network.webp" alt="" />
+        </div>
+    </div>
+</div>
