@@ -3,12 +3,30 @@
 .blog-form-main {
     background-color: aliceblue;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.user-message {
+    margin: 20px auto 0px;
+    width: 300px;
+    border: 1px solid #4771fa;
+    padding: 0.5rem;
+    border-radius: 3px;
+    background: #b9c9ff;
+    text-align: center;
+}
+
+.user-message--error {
+    border-color: red;
+    background-color: rgb(255, 176, 176);
+    color: red;
 }
 
 .blog-form-inner {
     width: 40%;
-    margin: 7em 0;
+    margin: 4em 0 7em;
     padding: 10px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -54,13 +72,15 @@
 }
 
 .blog-form-inner .form-control input {
-    height: 30px;;
+    height: 30px;
+    padding: 0 3px;
 }
 
 
 .blog-form-inner .form-control textarea {
     height: 150px;
     resize: none;
+    padding: 3px;
 }
 
 .blog-form-inner .form-control input, textarea {
@@ -89,7 +109,7 @@
 @media (max-width: 540px) {
 
     .blog-form-inner {
-        width: 90%;
+        width: 85%;
         margin: 3em 0 5em;
     }
 

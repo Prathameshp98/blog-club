@@ -10,4 +10,7 @@ router.get('/', isAuth,  blogController.getHome)
 // /add-blog
 router.get('/add-blog', isAuth,  blogController.getAddBlog)
 
+// /add-blog
+router.post('/add-blog', isAuth,  blogController.postAddBlog)
+
 module.exports = router
