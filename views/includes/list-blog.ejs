@@ -1,0 +1,21 @@
+
+<div class="list-blog-main">
+    <div class="list-blog-inner">
+        <div class="list-blog-select-menu">
+            <svg width="19" height="19" class="bz iv iw"><path d="M9 9H3v1h6v6h1v-6h6V9h-6V3H9v6z" fill-rule="evenodd"></path></svg>
+            <p class="active">For You</p>
+            <p>Liked by you</p>
+        </div>
+        <% if(blogs.length > 0){ %>
+            <div>
+                <% for (let blog of blogs) { %>
+                    <div>
+                        <p><%= blog.title %></p>
+                    </div>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1>No Blogs Found!</h1>
+        <% } %>
+    </div>
+</div>

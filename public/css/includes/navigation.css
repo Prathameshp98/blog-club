@@ -2,11 +2,17 @@ a {
     text-decoration: none;
 }
 
+button {
+    background-color: #fff;
+    border: none;
+}
+
 .hide {
     display: none;
 }
 
 .header-container {
+    position: fixed;
     display: flex;
     justify-content: center;
     width: 100%;

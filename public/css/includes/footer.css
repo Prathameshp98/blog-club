@@ -18,6 +18,7 @@ hr {
     justify-content: center;
     height: fit-content;
     padding: 50px 0 30px;
+    border-top: 1px solid #000;
 }
 
 .footer-inner {

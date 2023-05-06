@@ -29,12 +29,16 @@
                                 <img src="/images/dashboard.webp" alt="" />
                             </div>
                         </a>
-                        <a href="/auth/logout">
-                            <div class="profile-items-inner">
-                                <p>LogOut</p>
-                                <img src="/images/logout.webp" alt="" />
-                            </div>
-                        </a>
+                        <form action="/auth/logout" method="POST">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <button type="submit">
+                                <div class="profile-items-inner">
+                                    <p>LogOut</p>
+                                    <img src="/images/logout.webp" alt="" />
+                                </div>
+                            </button>
+                        </form>
+                        
                     </div>
                 </div>
 

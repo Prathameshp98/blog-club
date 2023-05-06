@@ -3,9 +3,18 @@ const Blog = require('../models/Blog')
 
 exports.getHome = (req, res, next) => {
 
-    res.render('blogs/home', {
-        userName: req.session.user.name
-    })
+    Blog
+        .find()
+        .then(blogs => {
+            res.render('blogs/home', {
+                userName: req.session.user.name,
+                blogs: blogs
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    
 }
 
 exports.getAddBlog = (req, res, next) => {
@@ -27,8 +36,6 @@ exports.postAddBlog = (req, res, next) => {
     const title = req.body.title
     const imageUrl = req.body.imageurl
     const content = req.body.content
-
-    console.log(title, imageUrl, content)
 
     const blog = new Blog({
         title: title,
