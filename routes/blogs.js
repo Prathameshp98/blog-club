@@ -7,6 +7,8 @@ const router = express.Router()
 
 router.get('/', isAuth,  blogController.getHome)
 
+router.post('/', isAuth, blogController.postHome)
+
 // /add-blog
 router.get('/add-blog', isAuth,  blogController.getAddBlog)
 
