@@ -1,0 +1,43 @@
+
+<div class="full-blog-main">
+    <div class="full-blog-inner">
+        <% blogs.map((blog, index) => { %>
+
+            <% if(blog.title === blogName) { %>
+
+                <% var time = String(blog.createdAt).substr(4,7) %>
+                <% var read_time = Math.round(blog.content.split(' ').length / 100) %>
+
+                <div class="user-info">
+                    <div class="user-info-left">
+                        <img src="/images/user.webp" alt="<%= blog.title %>" />
+                    </div>
+                    <div class="user-info-right">
+                        <h6><%= blog.author %></h6>
+                        <div>
+                            <p><%= time %></p>
+                            <p>.</p>
+                            <p><%= read_time %> min read</p>
+                        </div>  
+                    </div>
+                </div>
+                <div class="blog-info">
+                    <h4><%= blog.title %></h4>
+                    <p><%= blog.content %></p>
+                </div>
+                <div class="other-info">
+                    <div class="other-info-left">
+                        <p>Popular on Blog Club</p>
+                    </div>
+                    <div class="other-info-right">
+                        <img src="/images/heart.webp" alt="" />
+                        <img src="/images/minus.webp" alt="" />
+                        <img src="/images/option.webp" alt="" />
+                    </div>
+                </div>
+
+            <% } %>
+
+        <% }) %>
+    </div>
+</div>

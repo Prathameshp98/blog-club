@@ -1,4 +1,8 @@
 
+a {
+    color: #000;
+}
+
 .list-blog-main {
     width: 100%;
     height: fit-content;
@@ -102,12 +106,17 @@
     padding: 10px 0;
 }
 
+.list-blog-inner .list-blog-all-blogs .list-blog-all-blogs-inner .list-blog-all-blogs-each .list-blog-all-blogs-left .redirect-title:hover {
+    text-decoration: underline;
+}
+
 .list-blog-inner .list-blog-all-blogs .list-blog-all-blogs-inner .list-blog-all-blogs-each .list-blog-all-blogs-left .blog-info-mobile {
     display: none;
 }
 
 .list-blog-inner .list-blog-all-blogs .list-blog-all-blogs-inner .list-blog-all-blogs-each .list-blog-all-blogs-left .blog-info h4 {
     font-size: 20px;
+    cursor: pointer;
 }
 
 .list-blog-inner .list-blog-all-blogs .list-blog-all-blogs-inner .list-blog-all-blogs-each .list-blog-all-blogs-left .blog-info p {
@@ -139,6 +148,7 @@
 .list-blog-inner .list-blog-all-blogs .list-blog-all-blogs-inner .list-blog-all-blogs-each .list-blog-all-blogs-left .other-info .other-info-right img {
     width: 25px;
     height: 25px;
+    cursor: pointer;
 }
 
 .list-blog-inner .list-blog-all-blogs .list-blog-all-blogs-inner .list-blog-all-blogs-each .list-blog-all-blogs-right img {
@@ -210,6 +220,7 @@
 
     .list-blog-inner .list-blog-all-blogs .list-blog-all-blogs-inner .list-blog-all-blogs-each .list-blog-all-blogs-left .blog-info-mobile h4 {
         font-size: 15px;
+        cursor: pointer;
     }
 
     .list-blog-inner .list-blog-all-blogs .list-blog-all-blogs-inner .list-blog-all-blogs-each .list-blog-all-blogs-left .blog-info-mobile p {

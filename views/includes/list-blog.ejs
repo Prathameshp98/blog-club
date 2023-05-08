@@ -10,10 +10,13 @@
             <% if(blogs.length > 0){ %>
                 <div class="list-blog-all-blogs-inner">
                     <% blogs.map((blog, index) => { %>
+
                         <% var time = String(blog.createdAt).substr(0,3) + ', ' + String(blog.createdAt).substr(4,7) %>
                         <% var short_content = blog.content.substr(0,110) + '...' %>
                         <% var short_content_mobile = blog.content.substr(0,50) + '...' %>
                         <% var read_time = Math.round(blog.content.split(' ').length / 100) %>
+                        <% var slug = blog.title.replaceAll(' ','-') %>
+
                         <div class="list-blog-all-blogs-each" id="<%= blog._id %>">
                             <div class="list-blog-all-blogs-left">
                                 <div class="user-info">
@@ -23,12 +26,12 @@
                                     <p><%= time %></p>
                                 </div>
                                 <div class="blog-info">
-                                    <h4><%= blog.title %></h4>
+                                    <a href="/blog/<%= slug %>"><h4 class="redirect-title"><%= blog.title %></h4></a>
                                     <p><%= short_content %></p>
                                 </div>
                                 <div class="blog-info-mobile">
                                     <div>
-                                        <h4><%= blog.title %></h4>
+                                        <a href="/blog/<%= slug %>"><h4 class="redirect-title"><%= blog.title %></h4></a>
                                         <p><%= short_content_mobile %></p>
                                     </div>
                                     <img src="<%= blog.imageUrl %>" alt="<%= blog.title %>" />

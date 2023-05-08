@@ -1,0 +1,68 @@
+
+<div class="list-blog-main">
+    <div class="list-blog-inner">
+        <div class="list-blog-select-menu">
+            <svg width="19" height="19" class="bz iv iw"><path d="M9 9H3v1h6v6h1v-6h6V9h-6V3H9v6z" fill-rule="evenodd"></path></svg>
+            <p class="active">Recent</p>
+            <p>Liked by you</p>
+        </div>
+        <div class="list-blog-all-blogs">
+            <% if(blogs.length > 0){ %>
+                <div class="list-blog-all-blogs-inner">
+                    <% blogs.map((blog, index) => { %>
+
+                        <% if (blog.title !== blogName) { %>
+
+                            <% var time = String(blog.createdAt).substr(0,3) + ', ' + String(blog.createdAt).substr(4,7) %>
+                            <% var short_content = blog.content.substr(0,110) + '...' %>
+                            <% var short_content_mobile = blog.content.substr(0,50) + '...' %>
+                            <% var read_time = Math.round(blog.content.split(' ').length / 100) %>
+                            <% var slug = blog.title.replaceAll(' ','-') %>
+
+                            <div class="list-blog-all-blogs-each" id="<%= blog._id %>">
+                                <div class="list-blog-all-blogs-left">
+                                    <div class="user-info">
+                                        <img src="/images/user.webp" alt="<%= blog.author %>" />
+                                        <h6><%= blog.author %></h6>
+                                        <p>.</p>
+                                        <p><%= time %></p>
+                                    </div>
+                                    <div class="blog-info">
+                                        <a href="/blog/<%= slug %>"><h4 class="redirect-title"><%= blog.title %></h4></a>
+                                        <p><%= short_content %></p>
+                                    </div>
+                                    <div class="blog-info-mobile">
+                                        <div>
+                                            <a href="/blog/<%= slug %>"><h4 class="redirect-title"><%= blog.title %></h4></a>
+                                            <p><%= short_content_mobile %></p>
+                                        </div>
+                                        <img src="<%= blog.imageUrl %>" alt="<%= blog.title %>" />
+                                    </div>
+                                    <div class="other-info">
+                                        <div class="other-info-left">
+                                            <p><%= read_time %> min read</p>
+                                            <p>.</p>
+                                            <p>Popular on Blog Club</p>
+                                        </div>
+                                        <div class="other-info-right">
+                                            <img src="/images/heart.webp" alt="" />
+                                            <img src="/images/minus.webp" alt="" />
+                                            <img src="/images/option.webp" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-blog-all-blogs-right">
+                                    <img src="<%= blog.imageUrl %>" alt="<%= blog.title %>" />
+                                </div>
+                            </div>
+
+                        <% } %>
+                        
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <h1>No Blogs Found!</h1>
+            <% } %>
+        </div>
+    </div>
+</div>

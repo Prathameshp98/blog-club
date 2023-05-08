@@ -119,3 +119,35 @@ exports.postAddBlog = (req, res, next) => {
         })
 
 }
+
+exports.getBlogByName = (req, res, next) => {
+    const blogName = req.params.blogname
+
+    Blog
+        .find()
+        .sort([['createdAt', -1]])
+        .limit(6)
+        .then(blogs => {
+            blogs.forEach((blog, index) => {
+                User
+                .findById(blog.author)
+                .then(author => {                        
+                    blog.author = author.name
+
+                    if(index === blogs.length - 1){
+                        res.render('blogs/full-blog-page', {
+                            userName: req.session.user.name,
+                            blogs: blogs,
+                            blogName: blogName.replaceAll('-', ' ')
+                        })
+                    }
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+            })      
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
