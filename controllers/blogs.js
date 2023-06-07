@@ -24,7 +24,8 @@ exports.getHome = (req, res, next) => {
                             userName: req.session.user.name,
                             blogs: blogs.slice(0,5),
                             nextPage: 2,
-                            isLastPage: isLastPage
+                            isLastPage: isLastPage,
+                            userId: req.session.user._id.toString()
                         })
                     }
                 })
@@ -64,7 +65,8 @@ exports.postHome = (req, res, next) => {
                             userName: req.session.user.name,
                             blogs: blogs.slice(0, count),
                             nextPage: 2,
-                            isLastPage: isLastPage
+                            isLastPage: isLastPage,
+                            userId: req.session.user._id.toString()
                         })
                     }
                 })
@@ -137,7 +139,9 @@ exports.getBlogByName = (req, res, next) => {
                         res.render('blogs/full-blog-page', {
                             userName: req.session.user.name,
                             blogs: blogs,
-                            blogName: blogName.replaceAll('-', ' ')
+                            slug: blogName,
+                            blogName: blogName.replaceAll('-', ' '),
+                            userId: req.session.user._id.toString()
                         })
                     }
                 })
@@ -150,3 +154,45 @@ exports.getBlogByName = (req, res, next) => {
             console.log(err)
         })
 }
+
+exports.postLikeBlog = (req, res, next) => {
+
+    const blogId = req.params.blogId;
+    const userId = req.session.user._id.toString()
+
+    Blog
+        .findById(blogId)
+        .then(blog => {
+
+            if(!blog.likes.includes(userId)){
+
+                Blog
+                    .findByIdAndUpdate(blogId, {$push: {"likes": userId}})
+                    .then(updatedBlog => {
+                        
+                    })
+                    .catch(err => {
+                        console.log(err)        
+                    })
+            } else {
+
+                Blog
+                    .findByIdAndUpdate(blogId, {$pull: {"likes": userId}})
+                    .then(updatedBlog => {
+                        
+                    })
+                    .catch(err => {
+                        console.log(err)        
+                    })
+
+            }
+
+            return res.redirect(req.originalUrl)
+
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
+}
+

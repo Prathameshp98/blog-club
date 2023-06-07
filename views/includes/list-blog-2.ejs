@@ -18,6 +18,11 @@
                             <% var short_content_mobile = blog.content.substr(0,50) + '...' %>
                             <% var read_time = Math.round(blog.content.split(' ').length / 100) %>
                             <% var slug = blog.title.replaceAll(' ','-') %>
+                            <% if (blog.likes.includes(userId)) { %>
+                                <% var like_image = '/images/red_heart.webp' %>
+                            <% } else { %>
+                                <% var like_image = '/images/heart.webp' %>
+                            <% } %>
 
                             <div class="list-blog-all-blogs-each" id="<%= blog._id %>_blog">
                                 <div class="list-blog-all-blogs-left">
@@ -45,7 +50,10 @@
                                             <p>Popular on Blog Club</p>
                                         </div>
                                         <div class="other-info-right">
-                                            <img class="like" id="<%= blog._id %>" src="/images/red_heart.webp" alt="" />
+                                            <form action="/blog/<%= blog._id %>" method="POST" name="">
+                                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                                <button><img class="like" id="<%= blog._id %>" src="<%= like_image %>" alt="" /></button>
+                                            </form>     
                                             <img class="remove" id="<%= blog._id %>_remove" src="/images/minus.webp" alt="" />
                                             <img src="/images/option.webp" alt="" />
                                         </div>

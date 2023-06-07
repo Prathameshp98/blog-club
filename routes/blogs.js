@@ -18,4 +18,8 @@ router.post('/add-blog', isAuth,  blogController.postAddBlog)
 // /blog/:blogname
 router.get('/blog/:blogname', isAuth, blogController.getBlogByName)
 
+// /blog/:blogId
+router.post('/blog/:blogId', isAuth, blogController.postLikeBlog)
+
+
 module.exports = router

@@ -7,6 +7,11 @@
 
                 <% var time = String(blog.createdAt).substr(4,7) %>
                 <% var read_time = Math.round(blog.content.split(' ').length / 100) %>
+                <% if (blog.likes.includes(userId)) { %>
+                    <% var like_image = '/images/red_heart.webp' %>
+                <% } else { %>
+                    <% var like_image = '/images/heart.webp' %>
+                <% } %>
 
                 <div class="user-info">
                     <div class="user-info-left">
@@ -33,7 +38,10 @@
                         <p>Popular on Blog Club</p>
                     </div>
                     <div class="other-info-right">
-                        <img class="like" id="<%= blog.id %>" src="/images/red_heart.webp" alt="" />
+                        <form action="/blog/<%= blog._id %>" method="POST" name="">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <button><img class="like" id="<%= blog._id %>" src="<%= like_image %>" alt="" /></button>
+                        </form>   
                         <!-- <img src="/images/minus.webp" alt="" /> -->
                         <img src="/images/option.webp" alt="" />
                     </div>

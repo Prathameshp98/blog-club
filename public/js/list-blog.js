@@ -25,8 +25,6 @@ remove.forEach(element => {
         let targetId = event.target.id;
         targetId = targetId.replace("_remove","") + "_blog"
         const targetElement = document.getElementById(targetId);
-        console.log(targetId)
-        console.log(targetElement)
 
         targetElement.innerHTML = "<p class='blog-removal'>You won't see this blog again</p>"
 
