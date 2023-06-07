@@ -17,7 +17,7 @@
                         <% var read_time = Math.round(blog.content.split(' ').length / 100) %>
                         <% var slug = blog.title.replaceAll(' ','-') %>
 
-                        <div class="list-blog-all-blogs-each" id="<%= blog._id %>">
+                        <div class="list-blog-all-blogs-each">
                             <div class="list-blog-all-blogs-left">
                                 <div class="user-info">
                                     <img src="/images/user.webp" alt="<%= blog.author %>" />
@@ -43,7 +43,7 @@
                                         <p>Popular on Blog Club</p>
                                     </div>
                                     <div class="other-info-right">
-                                        <img id="like" src="/images/red_heart.webp" alt="" />
+                                        <img class="like" id="<%= blog._id %>" src="/images/red_heart.webp" alt="" />
                                         <img src="/images/minus.webp" alt="" />
                                         <img src="/images/option.webp" alt="" />
                                     </div>
