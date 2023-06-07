@@ -126,7 +126,6 @@ exports.getBlogByName = (req, res, next) => {
     Blog
         .find()
         .sort([['createdAt', -1]])
-        .limit(6)
         .then(blogs => {
             blogs.forEach((blog, index) => {
                 User

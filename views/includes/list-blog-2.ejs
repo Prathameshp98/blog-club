@@ -11,7 +11,7 @@
                 <div class="list-blog-all-blogs-inner">
                     <% blogs.map((blog, index) => { %>
 
-                        <% if (blog.title !== blogName) { %>
+                        <% if (blog.title !== blogName && index < 6) { %>
 
                             <% var time = String(blog.createdAt).substr(0,3) + ', ' + String(blog.createdAt).substr(4,7) %>
                             <% var short_content = blog.content.substr(0,110) + '...' %>
