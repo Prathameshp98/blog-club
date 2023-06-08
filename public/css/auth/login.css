@@ -153,6 +153,6 @@ a {
     .background {
         overflow: hidden;
         overflow-y: auto;
-        height: 110vh;
+        height: 90vh;
     }
 }
